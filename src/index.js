@@ -4,11 +4,15 @@ import './index.css';
 import App from './App';
 import { BrowserRouter as Router } from "react-router-dom";
 import reportWebVitals from './reportWebVitals';
+import { ProductProvider } from './Context';
+
 
 ReactDOM.render(
+  <ProductProvider>
   <Router>
     <App />
-  </Router>,
+  </Router>
+  </ProductProvider>,
   document.getElementById('root')
 );
 

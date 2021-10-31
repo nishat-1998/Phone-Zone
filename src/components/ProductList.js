@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
+import { ProductConsumer } from '../Context';
 import { storeProducts } from '../data';
 import Title from './Title';
-//import Product from './Product';
+import Product from './Product';
 
 
 export default class ProductList extends Component {
@@ -16,7 +17,14 @@ export default class ProductList extends Component {
                 <div className="container">
                        <Title name="Our" title="products"/>
                     <div className="row">
-
+                    <ProductConsumer>
+                        {value =>{
+                        //console.log(value)
+                        return value.products.map(product =>{
+                            return <Product key={product.id} product={product}/>
+                        })
+                        }}
+                    </ProductConsumer>
                     </div>
                 </div>
             </div>
