@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { ProductConsumer } from '../Context';
+import {ButtonContainer} from "./Button";
 
 
 export default class ProductDetails extends Component {
@@ -45,6 +46,20 @@ export default class ProductDetails extends Component {
                            <p className="text-muted lead">
                            {info}
                        </p>
+                       <div>
+                    <Link to="/">
+                      <ButtonContainer>back to products</ButtonContainer>
+                    </Link>
+                    <ButtonContainer 
+                    cart
+                    disabled={inCart? true:false}
+                    onClick={()=>{
+                        value.addToCart(id);
+                    }}
+                    >
+                      {inCart ? "in cart" : "add to cart"}
+                    </ButtonContainer>
+                  </div>
                </div>
                </div>
                </div>
