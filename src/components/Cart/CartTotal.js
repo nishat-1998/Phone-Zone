@@ -32,6 +32,7 @@ export default function CartTotal({value}) {
                 <h5>
                   <span className="text-title"> cartTotal :</span>{" "}
                   <strong>$ {cartTotal} </strong>
+                
                 </h5>
                 </div>
                 </div>
